@@ -84,5 +84,7 @@ function number_to_string(_number,_nds) {
         }
         if (_number_decimals) _string += decimals_parser(_number_decimals);
         if (_nds) _string += ' ' + _nds;
+        // upper case to first char
+        _string = _string.match(/^(.)/)[1].toLocaleUpperCase() + _string.match(/^.(.*)$/)[1];
         return _string;
 }
